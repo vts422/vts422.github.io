@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title> <!-- 修改为你的网站标题 -->
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; /* 常用现代字体 */
+            background-color: white;
+            color: #333; /* 正文默认文字颜色 */
+            line-height: 1.6;
+        }
+
+        /* 导航栏样式 - 模仿图片风格 */
+        .navbar {
+            display: flex;
+            justify-content: center; /* 居中导航项 */
+            align-items: center;
+            height: 60px; /* 导航栏高度 */
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 轻微底部阴影增强层次感 */
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem; /* 更大的品牌字体 */
+            font-weight: 600; /* 更粗 */
+            color: #333; /* 深灰色，类似图片中的 GOT-10k */
+            margin-right: 40px; /* 与其他导航项拉开距离 */
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 15px; /* 导航项间距 */
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #666; /* 浅灰色，类似图片中的 Home, Download 等 */
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #000; /* 鼠标悬停变深 */
+        }
+
+        .nav-item.has-dropdown {
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* 下拉箭头 (使用伪元素或图片) - 这里使用 CSS 箭头 */
+        .has-dropdown::after {
+            content: "▼";
+            font-size: 0.6rem;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        /* (可选) 下拉菜单样式 - 根据图片可能需要 */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 120px;
+            padding: 5px 0;
+            z-index: 10;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 8px 15px;
+        }
+
+        .nav-item.has-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 - 模仿图片结构 -->
+    <nav class="navbar">
+        <a href="#" class="nav-brand">我的空间</a> <!-- 修改为你的品牌名/主标题 -->
+        <ul class="nav-menu">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">文章</a></li> <!-- 根据你的内容修改 -->
+            <li><a href="#">项目</a></li> <!-- 根据你的内容修改 -->
+            <li><a href="#">关于我</a></li>
+            <li class="nav-item has-dropdown">
+                <span>提交</span> <!-- 或 <a>链接</a> -->
+                <ul class="dropdown-menu">
+                    <li><a href="#">联系我</a></li> <!-- 示例下拉项 -->
+                    <li><a href="#">反馈</a></li> <!-- 示例下拉项 -->
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 网站主内容区 - 留空等你填充 -->
+    <main style="padding: 40px 20px; text-align: center;">
+        <h1>欢迎来到我的个人网站</h1>
+        <p>此处是网站主要内容区域。请开始编辑和添加你的信息吧！</p>
+    </main>
+
+    <script>
+        // (可选) 简单的下拉菜单交互逻辑 (如果只用CSS的:hover，移动设备可能不友好)
+        // 建议: 对于更好的触摸设备支持，可以添加一点JS来切换类
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            item.addEventListener('click', (e) => {
+                // 防止点击链接本身跳转（如果用<a>则需防止默认行为）
+                e.preventDefault();
+                item.querySelector('.dropdown-menu').classList.toggle('show-dropdown');
+            });
+        });
+    </script>
+</body>
+</html>
