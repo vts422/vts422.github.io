@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交 | 个人网站</title>
+    <style>
+        /* 复用基本样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+        }
+        
+        .submit-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .submit-header {
+            margin-bottom: 50px;
+        }
+        
+        .submit-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .submit-card {
+            width: 300px;
+            padding: 40px 30px;
+            background: #f9fafc;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .submit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #4a6cf7;
+        }
+        
+        .submit-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .submit-card p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .card-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4a6cf7;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .card-button:hover {
+            background: #3c5bd8;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            margin-top: 50px;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">我的空间</a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="articles.html">文章</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li class="nav-item has-dropdown">
+                <a href="submit.html" style="color: #000;">提交</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html">联系我</a></li>
+                    <li><a href="feedback.html">反馈</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="submit-content">
+        <header class="submit-header">
+            <h1>与我互动</h1>
+            <p>选择您想提交的内容类型</p>
+        </header>
+        
+        <div class="submit-options">
+            <div class="submit-card">
+                <div class="card-icon">✉️</div>
+                <h3>联系我</h3>
+                <p>有合作机会、工作邀请或一般性咨询？点击下方按钮发送邮件给我</p>
+                <a href="contact.html" class="card-button">发送消息</a>
+            </div>
+            
+            <div class="submit-card">
+                <div class="card-icon">💬</div>
+                <h3>提供反馈</h3>
+                <p>对我的网站或内容有任何建议？您的反馈可以帮助我做得更好</p>
+                <a href="feedback.html" class="card-button">提供反馈</a>
+            </div>
+        </div>
+        
+        <section class="submit-info">
+            <h2>其他提交方式</h2>
+            <p>您也可以通过以下方式与我联系：</p>
+            <p><strong>电子邮箱：</strong> contact@example.com</p>
+            <p><strong>社交媒体：</strong> <a href="#">LinkedIn</a> | <a href="#">Twitter</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 我的个人空间。保留所有权利。</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (e.target.nodeName === 'A') return;
+                item.querySelector('.dropdown-menu').classList.toggle('show-dropdown');
+            });
+        });
+    </script>
+</body>
+</html>

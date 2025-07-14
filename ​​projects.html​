@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的项目 | 个人网站</title>
+    <style>
+        /* 复用基本样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+        }
+        
+        .projects-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .project-details {
+            padding: 25px;
+        }
+        
+        .project-details h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tag {
+            background-color: #f0f6ff;
+            color: #1a56db;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .project-link {
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .demo-link {
+            background-color: #4a6cf7;
+            color: white;
+        }
+        
+        .code-link {
+            border: 1px solid #4a6cf7;
+            color: #4a6cf7;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            margin-top: 50px;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">我的空间</a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="articles.html">文章</a></li>
+            <li><a href="projects.html" style="color: #000;">项目</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li class="nav-item has-dropdown">
+                <a href="submit.html">提交</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html">联系我</a></li>
+                    <li><a href="feedback.html">反馈</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="projects-content">
+        <header class="page-header">
+            <h1>我的项目作品</h1>
+            <p>探索我创造的技术解决方案和应用</p>
+        </header>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">项目展示图</div>
+                <div class="project-details">
+                    <h3>智能任务管理平台</h3>
+                    <p>基于React和Node.js的全栈应用程序，包含团队协作功能</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link demo-link">查看演示</a>
+                        <a href="#" class="project-link code-link">源代码</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">项目展示图</div>
+                <div class="project-details">
+                    <h3>数据分析可视化工具</h3>
+                    <p>使用D3.js创建的数据可视化仪表板，支持多种数据源</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link demo-link">查看演示</a>
+                        <a href="#" class="project-link code-link">源代码</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">项目展示图</div>
+                <div class="project-details">
+                    <h3>移动电商应用</h3>
+                    <p>使用React Native开发的跨平台电商应用程序</p>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Redux</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link demo-link">查看演示</a>
+                        <a href="#" class="project-link code-link">源代码</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 我的个人空间。保留所有权利。</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (e.target.nodeName === 'A') return;
+                item.querySelector('.dropdown-menu').classList.toggle('show-dropdown');
+            });
+        });
+    </script>
+</body>
+</html>

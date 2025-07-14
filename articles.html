@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的文章 | 个人网站</title>
+    <style>
+        /* 复用index.html中的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+        }
+        
+        /* 其余导航栏样式与index.html相同 */
+        
+        .article-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 180px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .article-info {
+            padding: 20px;
+        }
+        
+        .article-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .article-meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #4a6cf7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            margin-top: 50px;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">我的空间</a>
+        <ul class="nav-menu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="articles.html" style="color: #000;">文章</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li class="nav-item has-dropdown">
+                <a href="submit.html">提交</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.html">联系我</a></li>
+                    <li><a href="feedback.html">反馈</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="article-content">
+        <header class="page-header">
+            <h1>技术文章与博客</h1>
+            <p>分享知识、见解和学习笔记</p>
+        </header>
+        
+        <div class="articles-container">
+            <article class="article-card">
+                <div class="article-image">文章图片占位</div>
+                <div class="article-info">
+                    <h3>现代JavaScript最佳实践</h3>
+                    <div class="article-meta">发布于 2023年5月15日 | 技术</div>
+                    <p>探索ES6+新特性与项目中的实际应用</p>
+                    <a href="#" class="read-more">阅读全文 →</a>
+                </div>
+            </article>
+            
+            <article class="article-card">
+                <div class="article-image">文章图片占位</div>
+                <div class="article-info">
+                    <h3>响应式设计原理与实践</h3>
+                    <div class="article-meta">发布于 2023年4月3日 | 前端</div>
+                    <p>创建适配所有设备的网页设计解决方案</p>
+                    <a href="#" class="read-more">阅读全文 →</a>
+                </div>
+            </article>
+            
+            <article class="article-card">
+                <div class="article-image">文章图片占位</div>
+                <div class="article-info">
+                    <h3>Web性能优化进阶</h3>
+                    <div class="article-meta">发布于 2023年3月21日 | 性能</div>
+                    <p>从基础到高级的性能调优策略</p>
+                    <a href="#" class="read-more">阅读全文 →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 我的个人空间。保留所有权利。</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (e.target.nodeName === 'A') return;
+                item.querySelector('.dropdown-menu').classList.toggle('show-dropdown');
+            });
+        });
+    </script>
+</body>
+</html>
